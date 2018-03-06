@@ -31,6 +31,7 @@ public class overview extends JFrame {
 	 * Create the frame.
 	 */
 	public overview() {
+		employeeMethods = new Employees();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 899, 543);
 		contentPane = new JPanel();
@@ -42,7 +43,7 @@ public class overview extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(6, 6, 838, 352);
 		contentPane.add(scrollPane);
-		contentPane.add(scrollBar);
+		
 	}
 	
 	public void setzeAlleActionListener(ActionListener l)
@@ -79,8 +80,11 @@ public class overview extends JFrame {
 			System.err.println("Employeee Daten runterladen Fehlgeshlagen " + e);
 		}
 		//setzeAlleActionListener(this);
-		this.setTableModel(employeeMethods.getEmployeTableModel());
 		
+		this.setTableModel(employeeMethods.getEmployeTableModel());
+		System.out.println("test");
+		System.out.println("test");
+
 		this.setVisible(true);
 	}
 }

@@ -66,6 +66,7 @@ public class DatabaseManager {
     		String lastName = rs.getString(3);
     		String callNumber = rs.getString(4);
     		String group = getTitleName(rs.getInt(5));
+    		arrayListEmployee.add(new Employee(id,firstName,lastName,callNumber,group));
     	}
 		return arrayListEmployee;
     	
@@ -74,7 +75,8 @@ public class DatabaseManager {
    
     private String getTitleName(int idFromGroups) throws SQLException {
 		String title = "";
-		query = "SELECT title FROM group WHERE ID='"+idFromGroups+"'";
+		query = "SELECT title FROM mydb.group WHERE groupID='"+idFromGroups+"'";
+		System.out.println(query);
 		ResultSet rs = ausfuehren(query);
 		if(rs.next())
 		{
