@@ -30,7 +30,7 @@ public class EmployeeTableModel implements TableModel {
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 4;
+		return 5;
 	}
 
 	@Override
@@ -67,9 +67,9 @@ public class EmployeeTableModel implements TableModel {
 		else if (columnIndex == 2)
 			return employeeList.get(rowIndex).getLastName();
 		else if (columnIndex == 3)
-			return employeeList.get(rowIndex).getGroup();
-		else if (columnIndex == 4)
 			return employeeList.get(rowIndex).getCallNumber();
+		else if (columnIndex == 4)
+			return employeeList.get(rowIndex).getGroup();
 		return null;
 	}
 
